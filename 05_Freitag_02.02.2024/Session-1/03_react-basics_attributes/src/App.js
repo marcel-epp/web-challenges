@@ -22,5 +22,5 @@ function ArticleComponent() {
 }
 
 export default function App() {
-  return ArticleComponent();
+  return <ArticleComponent />;
 }
