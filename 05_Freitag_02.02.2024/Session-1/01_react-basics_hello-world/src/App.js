@@ -6,5 +6,5 @@ function HelloWorld() {
 }
 
 export default function App() {
-  return HelloWorld();
+  return <HelloWorld />;
 }
