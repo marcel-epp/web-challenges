@@ -1,5 +1,5 @@
 import Image from "../utils/Image";
-import avatar from "../img/logo.jpg";
+import avatar from "../img/avatar.jpg";
 
 function Avatar({ children }) {
   return (
