@@ -8,8 +8,8 @@ export default function App() {
 
   const validCode = "🐡🐠🐋";
 
-  function handleClick(emoji) {
-    setCode(emoji);
+  function handleClick(event) {
+    setCode(code + event.target.textContent);
     //code + event.target.textContent;
   }
 
@@ -18,8 +18,8 @@ export default function App() {
       <div className="button-container">
         <button
           type="button"
-          onClick={() => {
-            handleClick(code + event.target.textContent);
+          onClick={(event) => {
+            handleClick(event);
             console.log("🐡");
           }}
         >
@@ -29,8 +29,8 @@ export default function App() {
         </button>
         <button
           type="button"
-          onClick={() => {
-            handleClick(code + event.target.textContent);
+          onClick={(event) => {
+            handleClick(event);
             console.log("🐋");
           }}
         >
@@ -40,8 +40,8 @@ export default function App() {
         </button>
         <button
           type="button"
-          onClick={() => {
-            handleClick(code + event.target.textContent);
+          onClick={(event) => {
+            handleClick(event);
             console.log("🐠");
           }}
         >
