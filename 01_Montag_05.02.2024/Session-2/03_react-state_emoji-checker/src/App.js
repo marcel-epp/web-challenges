@@ -4,12 +4,12 @@ import "./styles.css";
 
 export default function App() {
   //let code = "?";
-  const [code, setCode] = useState("?");
+  const [code, setCode] = useState("");
 
   const validCode = "🐡🐠🐋";
 
   function handleClick(emoji) {
-    setCode(code + emoji);
+    setCode(emoji);
     //code + event.target.textContent;
   }
 
@@ -19,7 +19,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            handleClick(event.target.textContent);
+            handleClick(code + event.target.textContent);
             console.log("🐡");
           }}
         >
@@ -30,7 +30,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            handleClick(event.target.textContent);
+            handleClick(code + event.target.textContent);
             console.log("🐋");
           }}
         >
@@ -41,7 +41,7 @@ export default function App() {
         <button
           type="button"
           onClick={() => {
-            handleClick(event.target.textContent);
+            handleClick(code + event.target.textContent);
             console.log("🐠");
           }}
         >
