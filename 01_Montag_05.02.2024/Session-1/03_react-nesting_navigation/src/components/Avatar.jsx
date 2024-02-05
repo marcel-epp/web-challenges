@@ -1,10 +1,9 @@
 import Image from "../utils/Image";
 import avatar from "../img/avatar.jpg";
 
-function Avatar({ children }) {
+function Avatar() {
   return (
     <>
-      {children}
       <button
         type="button"
         onClick={() => console.log("I could toggle a profile!")}
