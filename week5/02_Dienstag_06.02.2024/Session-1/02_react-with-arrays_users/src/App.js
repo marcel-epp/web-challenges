@@ -11,6 +11,10 @@ export default function App() {
       <div className="app__card-grid">
         {/* <Card user={USERS[0]} /> */}
 
+        {/* {USERS.map((id, user) => (
+          <Card key={id} user={user} />
+        ))} */}
+
         {USERS.map((user) => (
           <Card key={user.id} user={user} />
         ))}
