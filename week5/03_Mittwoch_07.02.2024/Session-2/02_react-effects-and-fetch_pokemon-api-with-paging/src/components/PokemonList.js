@@ -11,7 +11,7 @@ export default function PokemonList() {
           `https://pokeapi.co/api/v2/pokemon?offset=${siteId}`
         );
         const data = await response.json();
-        //console.log(data);
+        console.log(data);
         setPokemon(data.results);
       } catch (error) {
         console.log(error);
@@ -29,7 +29,7 @@ export default function PokemonList() {
     <main>
       <button
         onClick={() => {
-          setSiteId((siteId) => siteId - 1);
+          setSiteId((siteId) => siteId - 20);
           console.log(siteId);
         }}
         type="button"
@@ -39,7 +39,7 @@ export default function PokemonList() {
       </button>
       <button
         onClick={() => {
-          setSiteId((siteId) => siteId + 1);
+          setSiteId((siteId) => siteId + 20);
           console.log(siteId);
         }}
         type="button"
