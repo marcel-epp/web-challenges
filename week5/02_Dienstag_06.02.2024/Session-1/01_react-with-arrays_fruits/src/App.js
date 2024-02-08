@@ -2,11 +2,11 @@ import Card from "./components/Card";
 
 export default function App() {
   const fruits = [
-    { id: 0, name: "🍌 banana", color: "yellow" },
-    { id: 1, name: "🍏 apple", color: "green" },
-    { id: 2, name: "🍒 cherry", color: "red" },
-    { id: 3, name: "🥭 mango", color: "green" },
-    { id: 4, name: "🍇 grape", color: "purple" },
+    { id: 0, name: "🍏 Apple", color: "green" },
+    { id: 1, name: "🍐 Pear", color: "yellow" },
+    { id: 2, name: "🍇 Grape", color: "purple" },
+    { id: 3, name: "🍉 Melon", color: "red" },
+    { id: 4, name: "🥕 Carrot", color: "orange" },
   ];
 
   return (
