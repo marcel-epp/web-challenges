@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+#root {
+  margin: 0 1.5em;
+}
+
 body {
   max-width: var(--max-width);
   margin: 0 auto;
