@@ -1,6 +1,6 @@
 function ActivityList({ activitys, isGoodWeather }) {
   return (
-    <div className="activity--list">
+    <div className="activity-list">
       <h2>
         {isGoodWeather
           ? "The weather is awesome! Go outside and:"

@@ -16,11 +16,11 @@ function ActivityForm({ onAddActivity }) {
   return (
     <form onSubmit={handleSubmit} className="form">
       <h2>Add new Activity:</h2>
-      <div className="form--group">
+      <div className="form-group">
         <label htmlFor="formName">Name:</label>
         <input name="formName" id="formName" required />
       </div>
-      <div className="form--group">
+      <div className="form-group">
         <label htmlFor="formCheckWeather">Good-weather activity:</label>
         <input type="checkbox" name="formCheckWeather" id="formCheckWeather" />
       </div>
