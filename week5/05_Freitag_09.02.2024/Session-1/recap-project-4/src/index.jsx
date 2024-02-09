@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 // import the css
 import "./index.css";
+import "./App.css";
 import "./components/activityform/activityform.css";
+import "./components/activitylist/activitylist.css";
 // import the needed components
 import App from "./App";
 

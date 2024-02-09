@@ -1,0 +1,15 @@
+.activity--list {
+  margin: 2em 0;
+}
+
+.activity--list ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.activity--list ol li {
+  margin-bottom: 1em;
+  padding: 1em;
+  color: var(--background-color);
+  background-color: var(--button-color);
+}
