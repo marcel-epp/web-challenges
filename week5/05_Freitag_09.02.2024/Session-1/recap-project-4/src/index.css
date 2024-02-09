@@ -1,6 +1,7 @@
 :root {
   /* --primary-color: #fcfcf7; */
   --background-color: #fcfcf7;
+  --button-color: grey;
   --max-width: 700px;
 }
 
