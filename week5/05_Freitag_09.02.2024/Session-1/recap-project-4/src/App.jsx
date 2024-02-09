@@ -5,10 +5,13 @@ import { uid } from "uid";
 import ActivityForm from "./components/activityform/activityform";
 import ActivityList from "./components/activitylist/activitylist";
 
+const isGoodWeather = true;
+
 function App() {
   const [activitys, setActivitys] = useLocalStorageState("activity", {
     defaultValue: [],
   });
+  // handle new activitys
   function handleAddActivity(newEntry) {
     // log the new entries
     console.log(newEntry);
@@ -21,6 +24,10 @@ function App() {
       ...activitys,
     ]);
   }
+  // filter the activitys for bad weather
+  const filteredActivitys = activitys.filter(
+    (activity) => activity.isForGoodWeather === isGoodWeather
+  );
   return (
     <div className="App">
       <header className="header">
@@ -28,7 +35,10 @@ function App() {
         <p>This is the weather app for recap project 4.</p>
       </header>
       <main className="main">
-        <ActivityList activitys={activitys} />
+        <ActivityList
+          activitys={filteredActivitys}
+          isGoodWeather={isGoodWeather}
+        />
         <ActivityForm onAddActivity={handleAddActivity} />
       </main>
     </div>
