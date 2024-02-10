@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { uid } from "uid";
 // import components;
@@ -34,9 +34,12 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
 
   // Function to update weather data
-  function updateWeatherData(data) {
+  // function updateWeatherData(data) {
+  //   setWeatherData(data);
+  // }
+  const updateWeatherData = useCallback((data) => {
     setWeatherData(data);
-  }
+  }, []);
 
   //-----------------------------------------------------------------------------
 
