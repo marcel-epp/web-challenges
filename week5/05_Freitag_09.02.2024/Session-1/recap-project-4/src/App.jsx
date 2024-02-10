@@ -39,6 +39,16 @@ function App() {
   }
 
   //-----------------------------------------------------------------------------
+
+  // Function to handle the delete activity
+  function handleDeleteActivity(id) {
+    setActivitys((prevActivities) =>
+      // using prev state to filter out
+      prevActivities.filter((activity) => activity.id !== id)
+    );
+  }
+
+  //-----------------------------------------------------------------------------
   return (
     <div className="App">
       <header className="header">
@@ -48,7 +58,11 @@ function App() {
         />
       </header>
       <main className="main">
-        <ActivityList activitys={activitys} weatherData={weatherData} />
+        <ActivityList
+          activitys={activitys}
+          weatherData={weatherData}
+          onDeleteActivity={handleDeleteActivity}
+        />
         <ActivityForm onAddActivity={handleAddActivity} />
       </main>
     </div>
