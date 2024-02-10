@@ -1,16 +1,19 @@
-//import { useState } from "react";
+import { useState } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { uid } from "uid";
-//import components;
+// import components;
 import ActivityForm from "./components/activityform/activityform";
 import ActivityList from "./components/activitylist/activitylist";
+import WeatherComponent from "./components/fetchweather/fetchweather";
 
-const isGoodWeather = true;
+//-----------------------------------------------------------------------------
 
 function App() {
+  // State to store the weather data
   const [activitys, setActivitys] = useLocalStorageState("activity", {
     defaultValue: [],
   });
+
   // handle new activitys
   function handleAddActivity(newEntry) {
     // log the new entries
@@ -24,25 +27,34 @@ function App() {
       ...activitys,
     ]);
   }
-  // filter the activitys for bad weather
-  const filteredActivitys = activitys.filter(
-    (activity) => activity.isForGoodWeather === isGoodWeather
-  );
+
+  //-----------------------------------------------------------------------------
+
+  // State to store the weather data
+  const [weatherData, setWeatherData] = useState(null);
+
+  // Function to update weather data
+  function updateWeatherData(data) {
+    setWeatherData(data);
+  }
+
+  //-----------------------------------------------------------------------------
   return (
     <div className="App">
       <header className="header">
         <h1>Hello Weather App!</h1>
         <p>This is the weather app for recap project 4.</p>
+        <WeatherComponent
+          weatherData={weatherData}
+          setWeatherData={updateWeatherData}
+        />
       </header>
       <main className="main">
-        <ActivityList
-          activitys={filteredActivitys}
-          isGoodWeather={isGoodWeather}
-        />
+        <ActivityList activitys={activitys} weatherData={weatherData} />
         <ActivityForm onAddActivity={handleAddActivity} />
       </main>
     </div>
   );
 }
-
+//-----------------------------------------------------------------------------
 export default App;
