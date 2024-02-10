@@ -2,15 +2,19 @@
   margin: 2em 0;
 }
 
-.activity-list ol {
+.activity-ordered-list {
   list-style-type: none;
   margin-top: 2em;
   padding-left: 0;
 }
 
-.activity-list ol li {
-  margin-bottom: 1em;
-  padding: 1em;
+.activity-list-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
   color: var(--background-color);
   background-color: var(--button-color);
+  margin-bottom: 1em;
+  padding: 1em;
 }
