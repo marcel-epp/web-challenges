@@ -18,7 +18,11 @@ const WeatherComponent = ({ weatherData, setWeatherData }) => {
       }
     };
     fetchData();
-  }, []);
+    // Fetch every 5 seconds
+    const fetchInterval = setInterval(fetchData, 5000);
+    // Clean up function
+    return () => clearInterval(fetchInterval);
+  }, [setWeatherData]);
 
   //}, [setWeatherData]);
   return (
