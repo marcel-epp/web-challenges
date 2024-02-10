@@ -22,23 +22,18 @@ const WeatherComponent = ({ weatherData, setWeatherData }) => {
 
   //}, [setWeatherData]);
   return (
-    <div>
+    <>
       {weatherData ? (
-        <div>
-          <p>Temperature: {weatherData.temperature}</p>
-          <p>Condition: {weatherData.condition}</p>
-          <p>Is good weather: {weatherData.isGoodWeather ? "true" : "false"}</p>
-          <p>Location: {weatherData.location}</p>
-          <h2>
-            {weatherData.isGoodWeather
-              ? "The weather is awesome! Go outside and:"
-              : "Bad weather outside! Here's what you can do now!"}
-          </h2>
-        </div>
+        <>
+          <div className="header-condition">{weatherData.condition}</div>
+          <div className="header-temperature">
+            {weatherData.temperature} &#8451;
+          </div>
+        </>
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </>
   );
 };
 

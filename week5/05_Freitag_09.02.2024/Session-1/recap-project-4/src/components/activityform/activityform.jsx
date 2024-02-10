@@ -24,7 +24,9 @@ function ActivityForm({ onAddActivity }) {
         <label htmlFor="formCheckWeather">Good-weather activity:</label>
         <input type="checkbox" name="formCheckWeather" id="formCheckWeather" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="form-submit" type="submit">
+        Submit
+      </button>
     </form>
   );
 }

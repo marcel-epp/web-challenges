@@ -3,7 +3,12 @@ function ActivityList({ activitys, weatherData }) {
   return (
     <div className="activity-list">
       {weatherData ? (
-        <div>
+        <>
+          <h2>
+            {weatherData.isGoodWeather
+              ? "The weather is awesome! Go outside and:"
+              : "Bad weather outside! Here's what you can do now!"}
+          </h2>
           <ol>
             {activitys.map((activity) =>
               // filter the activitys for bad weather
@@ -14,7 +19,7 @@ function ActivityList({ activitys, weatherData }) {
               )
             )}
           </ol>
-        </div>
+        </>
       ) : (
         <p>Loading...</p>
       )}

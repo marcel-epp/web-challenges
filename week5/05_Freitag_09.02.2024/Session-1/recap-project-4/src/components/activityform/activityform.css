@@ -1,8 +1,35 @@
 .form {
   display: flex;
   flex-direction: column;
+  margin: 3em 0;
 }
 
-.form--group {
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
   margin: 1em 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-group {
+    justify-content: space-between;
+  }
+}
+
+#formName {
+  flex-grow: 1;
+  padding: 1em;
+}
+
+#formCheckWeather {
+  width: 2em;
+  height: 2em;
+}
+
+.form-submit {
+  font-weight: 600;
+  padding: 1em;
+  margin-top: 1em;
 }

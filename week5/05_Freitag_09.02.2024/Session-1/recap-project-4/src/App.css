@@ -1,4 +1,13 @@
 /* here goes the css for the main app */
 .header {
-  margin-bottom: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2em;
+  margin: 2em 0;
+}
+
+.main {
+  margin: 3em 0;
 }
