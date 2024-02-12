@@ -1,5 +1,3 @@
-import { Fragment } from "react";
-
 function ActivityList({ activitys, weatherData, onDeleteActivity }) {
   //console.log(weatherData ? weatherData.temperature : "loading...");
   return (
@@ -16,17 +14,15 @@ function ActivityList({ activitys, weatherData, onDeleteActivity }) {
               (activity) =>
                 // filter the activitys for bad weather
                 activity.isForGoodWeather === weatherData.isGoodWeather && (
-                  <Fragment key={activity.id}>
-                    <div className="activity-list-items">
-                      <li>{activity.name}</li>
-                      <button
-                        onClick={() => onDeleteActivity(activity.id)}
-                        type="button"
-                      >
-                        x
-                      </button>
-                    </div>
-                  </Fragment>
+                  <div key={activity.id} className="activity-list-items">
+                    <li>{activity.name}</li>
+                    <button
+                      onClick={() => onDeleteActivity(activity.id)}
+                      type="button"
+                    >
+                      x
+                    </button>
+                  </div>
                 )
             )}
           </ol>
