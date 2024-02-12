@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { uid } from "uid";
 // import components;
@@ -34,13 +34,32 @@ function App() {
   // State to store the weather data
   const [weatherData, setWeatherData] = useState(null);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://example-apis.vercel.app/api/weather"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setWeatherData(data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    fetchData();
+    // Fetch every 5 seconds
+    const fetchInterval = setInterval(fetchData, 5000);
+    // Clean up function
+    return () => clearInterval(fetchInterval);
+  }, [setWeatherData]);
+
   // Function to update weather data
-  // function updateWeatherData(data) {
-  //   setWeatherData(data);
-  // }
-  const updateWeatherData = useCallback((data) => {
+  function updateWeatherData(data) {
     setWeatherData(data);
-  }, []);
+  }
 
   //-----------------------------------------------------------------------------
 

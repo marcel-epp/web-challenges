@@ -12,23 +12,22 @@ function ActivityList({ activitys, weatherData, onDeleteActivity }) {
               : "Bad weather outside! Here's what you can do now!"}
           </h2>
           <ol className="activity-ordered-list">
-            {activitys.map((activity) =>
-              // filter the activitys for bad weather
-              activity.isForGoodWeather === weatherData.isGoodWeather ? (
-                <Fragment key={activity.id}>
-                  <div className="activity-list-items">
-                    <li>{activity.name}</li>
-                    <button
-                      onClick={() => onDeleteActivity(activity.id)}
-                      type="button"
-                    >
-                      x
-                    </button>
-                  </div>
-                </Fragment>
-              ) : (
-                ""
-              )
+            {activitys.map(
+              (activity) =>
+                // filter the activitys for bad weather
+                activity.isForGoodWeather === weatherData.isGoodWeather && (
+                  <Fragment key={activity.id}>
+                    <div className="activity-list-items">
+                      <li>{activity.name}</li>
+                      <button
+                        onClick={() => onDeleteActivity(activity.id)}
+                        type="button"
+                      >
+                        x
+                      </button>
+                    </div>
+                  </Fragment>
+                )
             )}
           </ol>
         </>
