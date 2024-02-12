@@ -21,8 +21,9 @@ function App() {
     setActivitys([
       {
         id: uid(),
-        name: newEntry.name,
-        isForGoodWeather: newEntry.isForGoodWeather,
+        // name: newEntry.name,
+        // isForGoodWeather: newEntry.isForGoodWeather,
+        ...newEntry,
       },
       ...activitys,
     ]);
