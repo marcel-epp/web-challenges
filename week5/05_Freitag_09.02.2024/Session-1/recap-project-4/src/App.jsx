@@ -2,9 +2,9 @@ import { useState, useCallback } from "react";
 import useLocalStorageState from "use-local-storage-state";
 import { uid } from "uid";
 // import components;
-import ActivityForm from "./components/activityform/activityform";
-import ActivityList from "./components/activitylist/activitylist";
-import WeatherComponent from "./components/fetchweather/fetchweather";
+import ActivityForm from "./components/ActivityForm/ActivityForm";
+import ActivityList from "./components/Activitylist/ActivityList";
+import WeatherComponent from "./components/Fetchweather/FetchWeather";
 
 //-----------------------------------------------------------------------------
 
