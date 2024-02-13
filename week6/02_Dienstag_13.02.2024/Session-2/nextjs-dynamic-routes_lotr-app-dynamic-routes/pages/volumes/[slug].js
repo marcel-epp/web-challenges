@@ -3,7 +3,7 @@ import Link from "next/link.js";
 import Image from "next/image";
 import { volumes } from "../../lib/data.js";
 
-export default function Volumes() {
+export default function VolumeDetail() {
   const router = useRouter();
   const { slug } = router.query;
 
