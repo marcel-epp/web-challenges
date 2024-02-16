@@ -19,7 +19,7 @@ export default function Character() {
   }
 
   if (error) {
-    return <h1>Ops, something went wring! Contant Support!</h1>;
+    return <h1>Ops, something went wrong! Contact Support!</h1>;
   }
 
   //const id = 1;
