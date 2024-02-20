@@ -23,10 +23,10 @@ export default function Products() {
           <h2>{name}</h2>
           <ul>
             <li>{description}</li>
+            <li>{category}</li>
             <li>
               {price} {currency}
             </li>
-            <li>{category}</li>
           </ul>
         </div>
       ))}
