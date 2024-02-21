@@ -16,6 +16,14 @@ export default function Product() {
   if (!data) {
     return;
   }
+
+  function review() {
+    if (data.reviews.length === 0) {
+      return "Review: -";
+    } else {
+      return data.reviews[0].text;
+    }
+  }
   console.log(data);
   return (
     <ProductCard>
@@ -24,7 +32,7 @@ export default function Product() {
       <p>
         Price: {data.price} {data.currency}
       </p>
-      <p>Review: {data.reviews[0].text}</p>
+      <p>Review: {review()}</p>
       <StyledLink href="/">Back to all</StyledLink>
     </ProductCard>
   );
