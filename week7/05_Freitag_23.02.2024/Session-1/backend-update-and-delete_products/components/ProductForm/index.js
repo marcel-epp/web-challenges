@@ -9,7 +9,7 @@ export default function ProductForm({ onSubmit, value, isEditMode }) {
       </StyledHeading>
       <StyledLabel htmlFor="name">
         Name:
-        <input type="text" id="name" name="name" defaultValue={value.name} />
+        <input type="text" id="name" name="name" defaultValue={value?.name} />
       </StyledLabel>
       <StyledLabel htmlFor="description">
         Description:
@@ -17,7 +17,7 @@ export default function ProductForm({ onSubmit, value, isEditMode }) {
           type="text"
           id="description"
           name="description"
-          defaultValue={value.description}
+          defaultValue={value?.description}
         />
       </StyledLabel>
       <StyledLabel htmlFor="price">
@@ -27,7 +27,7 @@ export default function ProductForm({ onSubmit, value, isEditMode }) {
           id="price"
           name="price"
           min="0"
-          defaultValue={value.price}
+          defaultValue={value?.price}
         />
       </StyledLabel>
       <StyledLabel htmlFor="currency">
