@@ -2,6 +2,7 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 import { ProductCard } from "./Product.styled";
 import { StyledLink } from "../Link/Link.styled";
+import { StyledButton, StyledButtonDelete } from "../Button/Button.styled";
 import Comments from "../Comments";
 import { useState } from "react";
 import ProductForm from "../ProductForm";
@@ -58,17 +59,17 @@ export default function Product() {
       </p>
       {data.reviews.length > 0 && <Comments reviews={data.reviews} />}
       <StyledLink href="/">Back to all</StyledLink>
-      <button
+      <StyledButton
         type="button"
         onClick={() => {
           setIsEditMode(!isEditMode);
         }}
       >
         Edit
-      </button>
-      <button type="button" onClick={() => handleDeleteProduct(id)}>
+      </StyledButton>
+      <StyledButtonDelete type="button" onClick={() => handleDeleteProduct(id)}>
         Delete
-      </button>
+      </StyledButtonDelete>
       {isEditMode && (
         <ProductForm
           onSubmit={handleEditProduct}
